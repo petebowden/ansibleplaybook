@@ -1,0 +1,15 @@
+---
+# This playbook deploys the whole application stack in this site.
+
+- name: Sample Web Server 
+  hosts: all
+  remote_user: root
+  tasks:
+    - name: Install apache
+      yum: name=httpd state=latest
+
+    - name: Enable httpd
+      service: name=httpd enabled=yes state=started
+
+#    - name: Open Firewall
+      
