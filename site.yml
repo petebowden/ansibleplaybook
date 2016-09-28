@@ -11,5 +11,5 @@
     - name: Enable httpd
       service: name=httpd enabled=yes state=started
 
-#    - name: Open Firewall
-      
+    - name: Open Firewall
+      firewalld: service=http permanent=true state=enabled immediate=true 
